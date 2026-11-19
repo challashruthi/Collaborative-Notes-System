@@ -1,0 +1,75 @@
+D:\mini_project\collaborative-notes\frontend\src\components\FolderCard.jsx
+  Line 4: no-unused-vars - 'clsx' is defined but never used. Allowed unused vars must match /^[A-Z_]/u.
+D:\mini_project\collaborative-notes\frontend\src\components\layout\TopNav.jsx
+  Line 23: react-hooks/immutability - Error: Cannot access variable before it is declared
+
+`fetchUnreadCount` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  21 |
+  22 |   useEffect(() => {
+> 23 |     fetchUnreadCount();
+     |     ^^^^^^^^^^^^^^^^ `fetchUnreadCount` accessed before it is declared
+  24 |   }, []);
+  25 |
+  26 |   useEffect(() => {
+
+  38 |   }, []);
+  39 |
+> 40 |   const fetchUnreadCount = async () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 41 |     try {
+     | ^^^^^^^^^
+> 42 |       const res = await api.get('/notifications/unread-count');
+     | ^^^^^^^^^
+> 43 |       setUnreadCount(res.data.count || 0);
+     | ^^^^^^^^^
+> 44 |     } catch { setUnreadCount(0); }
+     | ^^^^^^^^^
+> 45 |   };
+     | ^^^^^ `fetchUnreadCount` is declared here
+  46 |
+  47 |   const fetchNotifications = async () => {
+  48 |     try {
+  Line 27: react-hooks/immutability - Error: Cannot access variable before it is declared
+
+`fetchNotifications` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  25 |
+  26 |   useEffect(() => {
+> 27 |     if (showNotifications) fetchNotifications();
+     |                            ^^^^^^^^^^^^^^^^^^ `fetchNotifications` accessed before it is declared
+  28 |   }, [showNotifications]);
+  29 |
+  30 |   useEffect(() => {
+
+  45 |   };
+  46 |
+> 47 |   const fetchNotifications = async () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 48 |     try {
+     | ^^^^^^^^^
+> 49 |       const res = await api.get('/notifications');
+     | ^^^^^^^^^
+> 50 |       setNotifications(res.data || []);
+     | ^^^^^^^^^
+> 51 |       setUnreadCount(0);
+     | ^^^^^^^^^
+> 52 |     } catch { setNotifications([]); }
+     | ^^^^^^^^^
+> 53 |   };
+     | ^^^^^ `fetchNotifications` is declared here
+  54 |
+  55 |   const markAllRead = async () => {
+  56 |     try {
+  Line 60: no-empty - Empty block statement.
+  Line 67: no-empty - Empty block statement.
+D:\mini_project\collaborative-notes\frontend\src\pages\MyNotes.jsx
+  Line 1: no-unused-vars - 'useCallback' is defined but never used. Allowed unused vars must match /^[A-Z_]/u.
+  Line 33: react-hooks/exhaustive-deps - React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.
+D:\mini_project\collaborative-notes\frontend\src\pages\NoteEditor.jsx
+  Line 255: null - Parsing error: Unexpected token {
+D:\mini_project\collaborative-notes\frontend\src\pages\Profile.jsx
+  Line 28: react-hooks/exhaustive-deps - React Hook useEffect has a missing dependency: 'user.name'. Either include it or remove the dependency array.
+  Line 173: no-unused-vars - 'Icon' is defined but never used.
+D:\mini_project\collaborative-notes\frontend\src\pages\VersionHistory.jsx
+  Line 30: no-unused-vars - 'index' is defined but never used.

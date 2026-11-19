@@ -1,0 +1,6 @@
+.vscode/
+frontend/node_modules/
+backend/target/
+backend/.mvn/
+.DS_Store
+*.log
